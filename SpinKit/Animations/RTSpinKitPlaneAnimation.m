@@ -32,6 +32,11 @@
     CALayer *plane = [CALayer layer];
     plane.frame = CGRectInset(CGRectMake(0.0, 0.0, size.width, size.height), 2.0, 2.0);
     plane.backgroundColor = color.CGColor;
+    if (self.borderColor)
+    {
+        plane.borderColor = self.borderColor.CGColor;
+        plane.borderWidth = 2;
+    }
     plane.anchorPoint = CGPointMake(0.5, 0.5);
     plane.anchorPointZ = 0.5;
     plane.shouldRasterize = YES;

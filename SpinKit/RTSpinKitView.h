@@ -57,6 +57,11 @@ typedef NS_ENUM(NSInteger, RTSpinKitViewStyle) {
 @property (nonatomic, strong) UIColor *color;
 
 /**
+ The border color of the activity indicator.
+ */
+@property (nonatomic, strong) UIColor *borderColor;
+
+/**
  Whether or not the receiver should be hidden when not animating.
  */
 @property (nonatomic, assign) BOOL hidesWhenStopped;

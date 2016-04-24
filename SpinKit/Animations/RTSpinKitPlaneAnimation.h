@@ -27,4 +27,6 @@
 
 @interface RTSpinKitPlaneAnimation : NSObject<RTSpinKitAnimating>
 
+@property (nonatomic, strong) UIColor *borderColor;
+
 @end
