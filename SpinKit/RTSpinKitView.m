@@ -113,21 +113,6 @@ static const CGFloat kRTSpinKitViewDefaultSpinnerSize = 37.0;
         animation = RTSpinKitAnimationFromStyle(self.style);
     }
     [animation setupSpinKitAnimationInLayer:self.layer withSize:size color:self.color];
-    
-    if ([animation isKindOfClass:[RTSpinKitPlaneAnimation class]])
-    {
-        ((RTSpinKitPlaneAnimation *)animation).borderColor = self.borderColor;
-    }
-}
-
-- (void)setBorderColor:(UIColor *)borderColor
-{
-    _borderColor = borderColor;
-    
-    if (self.animator && [self.animator isKindOfClass:[RTSpinKitPlaneAnimation class]])
-    {
-        ((RTSpinKitPlaneAnimation *)self.animator).borderColor = self.borderColor;
-    }
 }
 
 #pragma mark - Hooks

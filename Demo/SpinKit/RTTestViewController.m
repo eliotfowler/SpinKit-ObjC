@@ -8,6 +8,7 @@
 
 #import "RTTestViewController.h"
 #import "RTSpinKitView.h"
+#import "RTSpinKitModifiedPlaneAnimation.h"
 
 @interface RTTestViewController ()
 @property (nonatomic, assign) NSInteger numberOfSpinners;
@@ -111,7 +112,18 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = CGRectGetWidth(screenBounds);
     
-    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:style color:[UIColor whiteColor]];
+    RTSpinKitView *spinner;
+    
+    if (style == RTSpinKitViewStylePlane)
+    {
+        spinner = [[RTSpinKitView alloc] initWithAnimator:[RTSpinKitModifiedPlaneAnimation new] color:[UIColor whiteColor] spinnerSize:37.0];
+    }
+    else
+    {
+        spinner = [[RTSpinKitView alloc] initWithStyle:style color:[UIColor whiteColor]];
+    }
+    
+    spinner.borderColor = [UIColor blackColor];
     
     spinner.center = CGPointMake(CGRectGetMidX(screenBounds), CGRectGetMidY(screenBounds));
     [spinner startAnimating];
